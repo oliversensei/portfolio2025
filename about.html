@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="icon" href="https://group-portfolio-blond.vercel.app/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/about.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+        <div class="about-content">
+            <h1>About Me</h1>
+
+            <div class="personal-data">
+                <p><strong>Name:</strong> <span class="highlight">John Oliver Martillos</span></p>
+                <p><strong>Age:</strong> <span class="highlight age"></span></p>
+                <p><strong>Bio:</strong> <span class="highlight">Success</span> begins with failure, and <span class="highlight">failure</span> begins with challenge.</p>
+            </div>
+
+            <div class="skills-section">
+                <h2>Skills</h2>
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-bar"><div class="skill-progress" style="--skill-width: 95%;" data-skill="HTML"></div><span class="skill-label">HTML - 95%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="--skill-width: 90%;" data-skill="CSS"></div><span class="skill-label">CSS - 90%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="--skill-width: 85%;" data-skill="JavaScript"></div><span class="skill-label">JavaScript - 85%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="--skill-width: 82%;" data-skill="React JS"></div><span class="skill-label">React JS - 82%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="--skill-width: 90%;" data-skill="Bootstrap"></div><span class="skill-label">Bootstrap - 90%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="--skill-width: 85%;" data-skill="Tailwind CSS"></div><span class="skill-label">Tailwind CSS - 85%</span></div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-bar"><div class="skill-progress" style="--skill-width: 96%;" data-skill="PHP"></div><span class="skill-label">PHP - 96%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="--skill-width: 75%;" data-skill="Python"></div><span class="skill-label">Python - 75%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="--skill-width: 70%;" data-skill="Java"></div><span class="skill-label">Java - 70%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="--skill-width: 90%;" data-skill="MySQL"></div><span class="skill-label">MySQL - 90%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="--skill-width: 65%;" data-skill="GoLang"></div><span class="skill-label">GoLang - 65%</span></div>
+                </div>
+                <div class="skill-category">
+                    <h3>Others</h3>
+                    <div class="skill-bar"><div class="skill-progress" style="--skill-width: 90%;" data-skill="Git"></div><span class="skill-label">Git - 90%</span></div>
+                </div>
+            </div>
+
+            <div class="timeline-section">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Kolehiyo ng Lungsod ng Dasmariñas</h3>
+                        <p>2022 - 2026</p>
+                        <p>Bachelor of Science in Information Systems</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Eulogio 'Amang' Rodriguez Institute of Science and Technology</h3>
+                        <p>2019</p>
+                        <p>Bachelor of Science in Computer Science</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Philippine Christian University</h3>
+                        <p>2017 - 2019</p>
+                        <p>Science, Technology, Engineering, and Mathematics</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-section">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>KLD - Lead Systems Analysis and Design Unit</h3>
+                        <p>2025 - Present</p>
+                        <p>Lead Systems Analyst</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Freelance Web Developer</h3>
+                        <p>2024</p>
+                        <p>Full Stack Developer</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hobbies">
+                <h2>Hobbies</h2>
+                <ul>
+                    <li>Playing Dota 2</li>
+                    <li>Watching One Piece</li>
+                    <li>Coding</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Oliver. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/Martillosjohn" aria-label="Twitter" target="_blank">
+                <i class="fab fa-facebook"></i></a>
+            <a href="https://github.com/oliversensei" aria-label="GitHub" target="_blank">
+                <i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/john-oliver-9396a5356/" aria-label="LinkedIn" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function calculateAge() {
+            const birthDate = new Date('2000-12-12');
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            document.querySelector('.age').textContent = age;
+        }
+
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                setTimeout(() => {
+                    bar.classList.add('active');
+                }, 200);
+            });
+        }
+
+        window.addEventListener('load', () => {
+            calculateAge();
+            animateSkillBars();
+        });
+    </script>
+</body>
+</html>

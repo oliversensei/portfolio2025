@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="icon" href="https://group-portfolio-blond.vercel.app/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/contact.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <section class="contact-section">
+            <div class="contact-image">
+                <img src="https://cfs-survivors.org/wp-content/uploads/2020/10/contact-me.jpg" alt="Contact Image">
+                <div class="contact-info">
+                    <a href="mailto:johnoliver@example.com"><i class="fas fa-envelope"></i> martillosjohn@gmail.com</a>
+                    <a href="tel:+639123456789"><i class="fas fa-phone"></i>+63 966 385 7154</a>
+                </div>
+            </div>
+            <form class="contact-form" action="#" method="post" id="contactForm" name="submit-to-google-sheet">
+                <h2>Contact Me</h2> 
+                <p>Got a question, project, or idea? Contact me below and I'll get back to you as soon as possible.</p>
+                <div class="success-message" id="successMessage">Message sent successfully!</div>
+                <fieldset>
+                    <legend style="display: none;">Contact Form</legend>
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder=" ">
+                        <label for="name">Name</label>
+                        <div class="error-message" id="nameError">Please enter your name.</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder=" ">
+                        <label for="email">Email</label>
+                        <div class="error-message" id="emailError">Please enter a valid Gmail or Yahoo email.</div>
+                    </div>
+                    <div class="form-group">
+                        <select id="social" name="social" placeholder=" ">
+                            <option value="" disabled selected>Select a platform</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="linkedin">LinkedIn</option>
+                        </select>
+                        <label for="social">Social Media</label>
+                        <div class="error-message" id="socialError">Please select a social media platform.</div>
+                    </div>
+                    <div class="form-group" id="socialUrlGroup">
+                        <input type="url" id="socialUrl" name="socialUrl" placeholder=" ">
+                        <label for="socialUrl" id="socialUrlLabel">Social Media URL</label>
+                        <div class="error-message" id="socialUrlError">Please enter a valid URL.</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder=" " maxlength="10">
+                        <label for="phone">Phone Number</label>
+                        <div class="error-message" id="phoneError">Please enter a 10-digit phone number starting with 0.</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder=" ">
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder=" "></textarea>
+                        <label for="message">Message</label>
+                        <div class="error-message" id="messageError">Please enter your message.</div>
+                    </div>
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </section>
+    </div>
+
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Confirm Your Details</h2>
+            <div class="loading-bar" id="loadingBar"></div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td id="confirmName"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td id="confirmEmail"></td>
+                </tr>
+                <tr>
+                    <th>Social Media</th>
+                    <td id="confirmSocial"></td>
+                </tr>
+                <tr>
+                    <th>Social Media URL</th>
+                    <td id="confirmSocialUrl"></td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td id="confirmPhone"></td>
+                </tr>
+                <tr>
+                    <th>Subject</th>
+                    <td id="confirmSubject"></td>
+                </tr>
+                <tr>
+                    <th>Message</th>
+                    <td id="confirmMessage"></td>
+                </tr>
+            </table>
+            <p class="note">Please review your details before submitting.</p>
+            <div class="modal-buttons">
+                <button class="modal-btn confirm-btn" id="confirmSubmit">Confirm</button>
+                <button class="modal-btn cancel-btn" id="cancelSubmit">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Oliver. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/Martillosjohn" aria-label="Twitter" target="_blank">
+                <i class="fab fa-facebook"></i></a>
+            <a href="https://github.com/oliversensei" aria-label="GitHub" target="_blank">
+                <i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/john-oliver-9396a5356/" aria-label="LinkedIn" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyq5Sc75TzBhMX6JXRFDAYh9T8k1Guq3_A0yPJHVdI4eEsv3r2DhF0oTvKnB0SdfW0p/exec';
+    </script>
+</body>
+</html>

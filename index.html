@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliver's Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <a href="about.html" data-tooltip="About Me"><i class="fas fa-user"></i><span>About</span></a>
+        <a href="projects.html" data-tooltip="Projects"><i class="fas fa-briefcase"></i><span>Projects</span></a>
+        <a href="blogs.html" data-tooltip="Blogs"><i class="fas fa-blog"></i><span>Blogs</span></a>
+        <a href="services.html" data-tooltip="Services"><i class="fas fa-laptop-code"></i><span>Services</span></a>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-image">
+                <img src="./img/my-profile.png" alt="Oliver's Portrait">
+            </div>
+            <div class="hero-content">
+                <h1>Hello, I'm Oliver👋</h1>
+                <div class="tagline">Full-Stack Developer | Lead Systems Analyst</div>
+                <p>I'm passionate about building scalable and user-friendly applications that solve real-world problems. My approach combines creativity, technical expertise, and collaboration to deliver impactful results.</p>
+                <div class="contact-info">
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Philippines</span>
+                    </div>
+                    <div class="email">
+                        <i class="fas fa-envelope"></i>
+                        <span>martillosjohn@gmail.com</span>
+                    </div>
+                    <div class="phone">
+                        <i class="fas fa-phone"></i>
+                        <span>+63 966 385 7154</span>
+                    </div>
+                </div>
+                <div class="coffee-section">
+                    <i class="fas fa-coffee"></i>
+                    <blockquote>Coffee fuels my code</blockquote>
+                </div>
+                <div class="button-group">
+                    <a href="#" class="btn btn-primary btn-view" onclick="openModal(); gtag('event', 'view_cv', { 'event_category': 'Button', 'event_label': 'View CV' });">
+                        <i class="fas fa-file-pdf"></i> View CV
+                    </a>
+                    <a href="files/My-CV.pdf" download="Oliver's_CV.pdf" class="btn btn-download btn-download-main" onclick="startDownload(); gtag('event', 'download_cv', { 'event_category': 'Button', 'event_label': 'Download CV' });">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary" onclick="gtag('event', 'click_contact', { 'event_category': 'Button', 'event_label': 'Contact' })">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </div>
+                <div class="achievements">
+                    <div class="achievement-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>2+ Years Experience</h3>
+                    </div>
+                    <div class="achievement-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Team Leadership</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for CV Preview -->
+    <div class="modal" id="cvModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Oliver's_CV.pdf</h2>
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <embed src="files/My-CV.pdf" type="application/pdf">
+            </div>
+            <div class="modal-footer">
+                <a href="files/My-CV.pdf" download="Oliver's_CV.pdf" class="btn btn-download" onclick="startDownload(); gtag('event', 'download_cv', { 'event_category': 'Button', 'event_label': 'Download CV' });">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Oliver. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/Martillosjohn" aria-label="Twitter" target="_blank">
+                <i class="fab fa-facebook"></i></a>
+            <a href="https://github.com/oliversensei" aria-label="GitHub" target="_blank">
+                <i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/john-oliver-9396a5356/" aria-label="LinkedIn" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('cvModal').style.display = 'flex';
+            document.getElementById('progressBar').style.width = '0%';
+        }
+
+        function closeModal() {
+            document.getElementById('cvModal').style.display = 'none';
+            document.getElementById('progressBar').style.width = '0%';
+        }
+
+        function startDownload() {
+            const progressBar = document.getElementById('progressBar');
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                progressBar.style.width = `${progress}%`;
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        progressBar.style.width = '0%';
+                    }, 1000);
+                }
+            }, 200);
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('cvModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+ :root {
+     --primary: #2B6CB0;
+     --primary-dark: #1E4A7A;
+     --background: #1A202C;
+     --text: #F7FAFC;
+     --text-secondary: #A0AEC0;
+     --border: #2D3748;
+     --success: #38A169;
+     --error: #E53E3E;
+     --white: #FFFFFF;
+     --accent: #2D3748;
+     --gradient: linear-gradient(135deg, #2B6CB0, #4C9EEB);
+     --modal-bg: linear-gradient(135deg, rgba(43, 108, 176, 0.9), rgba(76, 158, 235, 0.7));
+     --transition: all 0.3s ease;
+     --shadow: 0 8px 16px -2px rgba(0, 0, 0, 0.4), 0 4px 8px -2px rgba(0, 0, 0, 0.2);
+ }
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ ::-webkit-scrollbar {
+     width: 12px;
+     height: 12px;
+ }
+
+ ::-webkit-scrollbar-track {
+     background: var(--background);
+     border-radius: 10px;
+ }
+
+ ::-webkit-scrollbar-thumb {
+     background: var(--primary);
+     border-radius: 10px;
+     border: 3px solid var(--background);
+ }
+
+ ::-webkit-scrollbar-thumb:hover {
+     background: var(--primary-dark);
+ }
+
+ body {
+     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+     background: linear-gradient(rgba(26, 32, 44, 0.95), rgba(26, 32, 44, 0.95)), url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 28 49"%3E%3Cg fill-rule="evenodd"%3E%3Cg id="hexagons" fill="%232D3748" fill-opacity="0.4" fill-rule="nonzero"%3E%3Cpath d="M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0h2v7.5L29.99 15v2.3L17 9.95V0zm14 18.5v2.3l-12.99 7.5V49h2v-8.85l12.99-7.5v-2.3z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+     color: var(--text);
+     line-height: 1.6;
+     padding-bottom: 60px;
+     padding-top: 50px;
+ }
+
+ .container {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 2rem;
+     position: relative;
+ }
+
+ .back-btn {
+     position: absolute;
+     top: 1rem;
+     left: 1rem;
+     background: var(--gradient);
+     color: var(--white);
+     border-radius: 0.5rem;
+     padding: 0.5rem 1rem;
+     text-decoration: none;
+     font-weight: 600;
+     font-size: clamp(1rem, 3vw, 1.2rem);
+     transition: var(--transition);
+     display: inline-flex;
+     align-items: center;
+     gap: 0.5rem;
+     box-shadow: var(--shadow);
+     z-index: 1000;
+ }
+
+ .back-btn:hover {
+     background: linear-gradient(135deg, #1E4A7A, #2B6CB0);
+     transform: translateY(-3px);
+ }
+
+ .contact-section {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 3rem;
+     background: rgba(45, 55, 72, 0.7);
+     border-radius: 1rem;
+     box-shadow: var(--shadow);
+     padding: 3rem;
+     backdrop-filter: blur(10px);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     animation: fadeInUp 1s ease-in-out;
+     width: 100%;
+     max-width: 1300px;
+     margin-top: 4rem;
+ }
+
+ @keyframes fadeInUp {
+     from {
+         transform: translateY(50px);
+         opacity: 0;
+     }
+
+     to {
+         transform: translateY(0);
+         opacity: 1;
+     }
+ }
+
+ .contact-image {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 1.5rem;
+ }
+
+ .contact-image img {
+     width: 100%;
+     max-height: 420px;
+     border-radius: 1rem;
+     box-shadow: var(--shadow);
+     object-fit: cover;
+     border: 3px solid var(--primary);
+     transition: var(--transition);
+ }
+
+ .contact-image img:hover {
+     transform: scale(1.02);
+ }
+
+ .contact-info {
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     width: 100%;
+     padding: 1rem;
+     background: rgba(43, 108, 176, 0.15);
+     border-radius: 0.75rem;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ }
+
+ .contact-info a {
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+     color: var(--text);
+     text-decoration: none;
+     transition: var(--transition);
+     font-size: clamp(1rem, 2vw, 1.2rem);
+ }
+
+ .contact-info a:hover {
+     color: var(--primary);
+     transform: translateX(5px);
+ }
+
+ .contact-info i {
+     color: var(--primary);
+     font-size: 1.2rem;
+ }
+
+ .contact-form {
+     display: flex;
+     flex-direction: column;
+     gap: 1.5rem;
+ }
+
+ .contact-form h2 {
+     font-size: clamp(1.8rem, 3vw, 2.8rem);
+     color: var(--white);
+     text-align: center;
+ }
+
+ .contact-form p {
+     font-size: clamp(1rem, 3vw, 1.4rem);
+     padding-bottom: 1rem;
+     text-align: center;
+ }
+
+ fieldset {
+     border: none;
+     padding: 0;
+ }
+
+ .form-group {
+     position: relative;
+     margin-bottom: 1.5rem;
+ }
+
+ .form-group input,
+ .form-group select,
+ .form-group textarea {
+     width: 100%;
+     padding: 0.75rem 1rem;
+     background: rgba(255, 255, 255, 0.05);
+     border: 2px solid var(--border);
+     border-radius: 0.5rem;
+     color: var(--text);
+     font-size: clamp(1rem, 3vw, 1.2em);
+     transition: var(--transition);
+ }
+
+ .form-group textarea {
+     min-height: 100px;
+     resize: vertical;
+ }
+
+ .form-group select {
+     background: var(--background) !important;
+ }
+
+ .form-group label {
+     position: absolute;
+     top: 50%;
+     left: 1rem;
+     transform: translateY(-50%);
+     color: var(--text-secondary);
+     pointer-events: none;
+     font-size: clamp(1rem, 3vw, 1.2rem);
+     transition: var(--transition);
+ }
+
+ .form-group input:focus,
+ .form-group select:focus,
+ .form-group textarea:focus,
+ .form-group input:not(:placeholder-shown),
+ .form-group select:not(:placeholder-shown),
+ .form-group textarea:not(:placeholder-shown) {
+     border-color: var(--primary);
+     background: rgba(255, 255, 255, 0.1);
+ }
+
+ .form-group input:focus~label,
+ .form-group select:focus~label,
+ .form-group textarea:focus~label,
+ .form-group input:not(:placeholder-shown)~label,
+ .form-group select:not(:placeholder-shown)~label,
+ .form-group textarea:not(:placeholder-shown)~label {
+     top: -0.5rem;
+     left: 0.75rem;
+     transform: translateY(0);
+     background: rgba(45, 55, 72, 0.9);
+     padding: 0 0.25rem;
+     font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+     color: var(--primary);
+ }
+
+ .form-group .error-message {
+     color: var(--error);
+     font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+     margin-top: 0.25rem;
+     display: none;
+ }
+
+ .form-group.invalid .error-message {
+     display: block;
+ }
+
+ .form-group.invalid input,
+ .form-group.invalid select,
+ .form-group.invalid textarea {
+     border-color: var(--error);
+ }
+
+ #socialUrlGroup {
+     display: none;
+ }
+
+ button[type="submit"] {
+     background: var(--gradient);
+     color: var(--white);
+     border: none;
+     padding: 0.75rem 2rem;
+     border-radius: 0.5rem;
+     font-weight: 600;
+     font-size: clamp(1rem, 2vw, 1.2rem);
+     cursor: pointer;
+     transition: var(--transition);
+     box-shadow: var(--shadow);
+     align-self: center;
+ }
+
+ button[type="submit"]:hover {
+     background: linear-gradient(135deg, #1E4A7A, #2B6CB0);
+     transform: translateY(-3px);
+ }
+
+ .modal {
+     display: none;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.85);
+     z-index: 1001;
+     justify-content: center;
+     align-items: center;
+     animation: fadeIn 0.5s ease;
+ }
+
+ .modal-content {
+     background: var(--background);
+     padding: 2rem;
+     border-radius: 1rem;
+     box-shadow: var(--shadow);
+     max-width: 700px;
+     width: 90%;
+     position: relative;
+     border: 2px solid var(--primary);
+     backdrop-filter: blur(10px);
+     animation: scaleIn 0.5s ease;
+ }
+
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+     }
+
+     to {
+         opacity: 1;
+     }
+ }
+
+ @keyframes scaleIn {
+     from {
+         transform: scale(0.8);
+         opacity: 0;
+     }
+
+     to {
+         transform: scale(1);
+         opacity: 1;
+     }
+ }
+
+ .modal-content h2 {
+     font-size: clamp(1.5rem, 3vw, 3rem);
+     color: var(--white);
+     margin-bottom: 1.5rem;
+     text-align: center;
+ }
+
+ .modal-content table {
+     width: 100%;
+     border-collapse: collapse;
+     margin-bottom: 1rem;
+ }
+
+ .modal-content table th,
+ .modal-content table td {
+     padding: 0.75rem;
+     text-align: left;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+     font-size: clamp(1rem, 2vw, 1.6rem);
+ }
+
+ .modal-content table th {
+     color: var(--text-secondary);
+     width: 30%;
+ }
+
+ .modal-content table td {
+     color: var(--text);
+ }
+
+ .modal-content .note {
+     font-size: clamp(1rem, 2vw, 1.6rem);
+     color: var(--text-secondary);
+     text-align: center;
+     margin-bottom: 1rem;
+ }
+
+ .close-btn {
+     position: absolute;
+     top: 1rem;
+     right: 1rem;
+     font-size: 2.5rem;
+     color: var(--white);
+     cursor: pointer;
+     transition: var(--transition);
+ }
+
+ .close-btn:hover {
+     color: var(--error);
+ }
+
+ .modal-buttons {
+     display: flex;
+     gap: 1rem;
+     justify-content: center;
+     margin-top: 2rem;
+ }
+
+ .modal-btn {
+     padding: 0.75rem 1.5rem;
+     border-radius: 0.5rem;
+     font-weight: 600;
+     font-size: clamp(1rem, 2vw, 1.2rem);
+     transition: var(--transition);
+     cursor: pointer;
+     box-shadow: var(--shadow);
+ }
+
+ .confirm-btn {
+     background: var(--gradient);
+     color: var(--white);
+     border: none;
+ }
+
+ .confirm-btn:hover {
+     background: linear-gradient(135deg, #1E4A7A, #2B6CB0);
+     transform: translateY(-3px);
+ }
+
+ .cancel-btn {
+     background: var(--error);
+     color: var(--white);
+     border: none;
+ }
+
+ .cancel-btn:hover {
+     background: #C53030;
+     transform: translateY(-3px);
+ }
+
+ .success-message {
+     display: none;
+     text-align: center;
+     font-size: clamp(1.2rem, 3vw, 1.4rem);
+     color: var(--white);
+     background: var(--success);
+     padding: 1rem;
+     border-radius: 0.5rem;
+     margin-top: 1.5rem;
+     animation: fadeIn 0.5s ease;
+ }
+
+ .loading-bar {
+     display: none;
+     width: 100%;
+     height: 5px;
+     background: rgba(255, 255, 255, 0.2);
+     border-radius: 2.5px;
+     overflow: hidden;
+     margin-bottom: 1rem;
+ }
+
+ .loading-bar::after {
+     content: '';
+     display: block;
+     width: 50%;
+     height: 100%;
+     background: var(--primary);
+     animation: loading 1.5s infinite ease-in-out;
+ }
+
+ @keyframes loading {
+     0% {
+         transform: translateX(-100%);
+     }
+
+     50% {
+         transform: translateX(200%);
+     }
+
+     100% {
+         transform: translateX(200%);
+     }
+ }
+
+ footer {
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     background: rgba(45, 55, 72, 0.9);
+     backdrop-filter: blur(5px);
+     border-top: 1px solid rgba(255, 255, 255, 0.1);
+     padding: 1rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 2rem;
+     color: var(--text-secondary);
+     font-size: clamp(1rem, 3vw, 1.4rem);
+     box-shadow: var(--shadow);
+     z-index: 1000;
+ }
+
+ footer p {
+     margin: 0;
+ }
+
+ footer .social-links a {
+     color: var(--text-secondary);
+     margin: 0 0.5rem;
+     font-size: clamp(1rem, 3vw, 1.4rem);
+     transition: var(--transition);
+ }
+
+ footer .social-links a:hover {
+     color: var(--primary);
+     transform: translateY(-2px);
+ }
+
+ @media (max-width: 768px) {
+     body {
+         padding: 0px;
+     }
+
+     .container {
+         padding: 1rem;
+         padding-top: 2rem;
+     }
+
+     .contact-section {
+         grid-template-columns: 1fr;
+         padding: 1.5rem;
+         gap: 2rem;
+         margin-top: 2rem;
+         margin-bottom: 2rem;
+     }
+
+     .contact-image img {
+         max-height: 300px;
+     }
+
+     .modal-content {
+         padding: 1.5rem;
+         max-width: 90%;
+     }
+
+     .modal-content table th,
+     .modal-content table td {
+         font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+     }
+
+     .back-btn {
+         top: 0.5rem;
+         left: 0.5rem;
+         padding: 0.5rem 1rem;
+         font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+     }
+
+     footer {
+         gap: 0.5rem;
+         padding: 0.75rem;
+         font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+     }
+
+     footer .social-links a {
+         margin: 0 0.3rem;
+     }
+ }
