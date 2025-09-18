@@ -189,8 +189,8 @@ body {
 }
 
 .project-card .button-group {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 1rem;
 }
 
@@ -386,10 +386,6 @@ footer .social-links a:hover {
         font-size: clamp(0.625rem, 1.5vw, 0.75rem);
     }
 
-    .project-card .btn {
-        padding: 7px;
-    }
-
     footer {
         gap: 0.5rem;
         padding: 0.75rem;
@@ -401,4 +397,5 @@ footer .social-links a:hover {
     }
 
 }
+
 
