@@ -51,7 +51,7 @@ body {
 }
 
 .container {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     position: relative;
@@ -94,7 +94,7 @@ body {
     color: var(--text-secondary);
     border: none;
     padding: 0.5rem 1rem;
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-size: clamp(1rem, 3vw, 1.5rem);
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
@@ -150,7 +150,7 @@ body {
 
 .blog-card img {
     width: 100%;
-    height: 250px;
+    height: 210px;
     object-fit: cover;
     border-bottom: 2px solid var(--primary);
 }
@@ -172,13 +172,13 @@ body {
 }
 
 .blog-card h2 {
-    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(1.25rem, 3vw, 1.8rem);
     color: var(--white);
     margin-bottom: 0.5rem;
 }
 
 .blog-card .excerpt {
-    font-size: clamp(1rem, 3vw, 1.4rem);
+    font-size: clamp(1rem, 3vw, 1.3rem);
     color: var(--text-secondary);
     margin-bottom: 1rem;
     display: -webkit-box;
@@ -196,7 +196,7 @@ body {
 
 .blog-card .meta i {
     color: var(--success);
-    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(1rem, 3vw, 1.4rem);
 }
 
 .blog-card .read-more {
